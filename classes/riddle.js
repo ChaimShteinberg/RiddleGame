@@ -20,6 +20,7 @@ class riddle{
         while (test){
             // ממתין לקלט מהמשתמש
             const Answer = readline.question("Answer the riddle: ");
+            // בודק את התשובה ומגיב בהתאם
             if (Answer === this.correctAnswer){
                 test = false;
                 console.log("\ncorrect Answer \n");                
@@ -29,6 +30,3 @@ class riddle{
         }
     }
 }   
-
-const game = new riddle(1, "aaa", "5 + 3", "8");
-game.ask();
