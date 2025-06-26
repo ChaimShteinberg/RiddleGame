@@ -14,6 +14,7 @@ riddle-game/
 ├── riddles/            תקיית החידות
 │   ├── riddle1.js
 │   ├── riddle2.js
+│   ├── riddlesList.js
 └── classes/            תקיית המחלקות 
     ├── Riddle.js       מחלקת חידה
     ├── Player.js       מחלקת שחקן
