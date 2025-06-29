@@ -21,17 +21,10 @@ function main(){
     // רץ על החידות
     for (const myRiddle of riddleList){
         // יוצר אוביקט של חידה
-        const newriddle = new riddle(myRiddle.id, myRiddle.level, myRiddle.name, myRiddle.taskDescription, myRiddle.correctAnswer);
-        // מפעיל טיימר
-        const start = Date.now();
+        const newriddle = new riddle(myRiddle.id, myRiddle.level, myRiddle.name, myRiddle.taskDescription, myRiddle.correctAnswer); 
         // מפעיל חידה
-        newriddle.ask()
-        // סוגר טיימר
-        const end = Date.now();
-        // שומר את משך זמן החידה
-        myPlayer.recordTime(start, end);
+        newriddle.ask(myPlayer)
     }
-
     // סיום המשחק
     console.log("You have successfully completed the game!\n");
     // הצגת סיכום
