@@ -1,10 +1,10 @@
-class player{
+export default class player{
     constructor(name){
         this.name = name;
         this.times = [];
     }
     recordTime(start, end){
-        this.times.push(end - start);
+        this.times.push((end - start) / 1000);
     }
     showStats(){
         let sum = 0;
