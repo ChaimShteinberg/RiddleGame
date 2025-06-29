@@ -5,5 +5,6 @@ export default {
     level: "easy",
     name: "Multiplication", 
     taskDescription: "What is 4 × 2.", 
-    correctAnswer: "8"
+    correctAnswer: "8", 
+    hint: "How much is 4 taken twice?"
 };

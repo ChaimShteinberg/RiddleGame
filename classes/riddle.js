@@ -3,12 +3,13 @@ import readline from 'readline-sync';
 // מבנה חידה
 
 export default class riddle{
-    constructor(id, level, name, taskDescription, correctAnswer){
+    constructor(id, level, name, taskDescription, correctAnswer, hint){
         this.id = id,
         this.level = level,
         this.name = name, 
         this.taskDescription = taskDescription, 
-        this.correctAnswer = correctAnswer
+        this.correctAnswer = correctAnswer, 
+        this.hint = hint
     }
 
     // פעילות החידה
