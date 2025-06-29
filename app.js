@@ -21,7 +21,7 @@ function main(){
     // רץ על החידות
     for (const myRiddle of riddleList){
         // יוצר אוביקט של חידה
-        const newriddle = new riddle(myRiddle.id, myRiddle.level, myRiddle.name, myRiddle.taskDescription, myRiddle.correctAnswer); 
+        const newriddle = new riddle(myRiddle.id, myRiddle.level, myRiddle.name, myRiddle.taskDescription, myRiddle.correctAnswer, myRiddle.hint); 
         // מפעיל חידה
         newriddle.ask(myPlayer)
     }
