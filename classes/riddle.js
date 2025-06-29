@@ -14,6 +14,8 @@ export default class riddle{
 
     // פעילות החידה
     ask(player){
+        let penalty = 0
+
         // מציג את החידה
         console.log(`Riddle number ${this.id}: \n\n` +
             `The riddle is: ${this.taskDescription}\n`);
@@ -31,7 +33,7 @@ export default class riddle{
             } else if (Answer === "hint"){
                 // אפשרות לרמז
                 console.log(this.hint);
-                start -= 10000;
+                penalty += 10;
             } else {
                 console.log("\nWrong, Try again\n");                
             }
@@ -40,9 +42,9 @@ export default class riddle{
         const end = Date.now();
         if (end - start > 5000){
             console.log("Too slow! 5 seconds penalty applied.");
-            start -= 5000;
+            penalty += 5;
         }
         // שומר את משך זמן החידה
-        player.recordTime(start, end);
+        player.recordTime(start, end, penalty);
     }
 }   
