@@ -5,5 +5,6 @@ export default {
     level: "medium",
     name: "Word Count", 
     taskDescription: "How many words are in the sentence: 'Today is a sunny day'?", 
-    correctAnswer: "5"
+    correctAnswer: "5", 
+    hint: "Count the spaces and add one."
 };

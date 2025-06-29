@@ -3,12 +3,13 @@ import readline from 'readline-sync';
 // מבנה חידה
 
 export default class riddle{
-    constructor(id, level, name, taskDescription, correctAnswer){
+    constructor(id, level, name, taskDescription, correctAnswer, hint){
         this.id = id,
         this.level = level,
         this.name = name, 
         this.taskDescription = taskDescription, 
-        this.correctAnswer = correctAnswer
+        this.correctAnswer = correctAnswer, 
+        this.hint = hint
     }
 
     // פעילות החידה
@@ -17,7 +18,7 @@ export default class riddle{
         console.log(`Riddle number ${this.id}: \n\n` +
             `The riddle is: ${this.taskDescription}\n`);
         // מפעיל טיימר
-        const start = Date.now();
+        let start = Date.now();
         
         let test = true;
         while (test){
@@ -26,16 +27,20 @@ export default class riddle{
             // בודק את התשובה ומגיב בהתאם
             if (Answer === this.correctAnswer){
                 test = false;
-                console.log("\ncorrect Answer \n");                
+                console.log("\ncorrect Answer \n");   
+            } else if (Answer === "hint"){
+                // אפשרות לרמז
+                console.log(this.hint);
+                start -= 10000;
             } else {
                 console.log("\nWrong, Try again\n");                
             }
         }
         // סוגר טיימר
-        let end = Date.now();
+        const end = Date.now();
         if (end - start > 5000){
             console.log("Too slow! 5 seconds penalty applied.");
-            end += 5000;
+            start -= 5000;
         }
         // שומר את משך זמן החידה
         player.recordTime(start, end);

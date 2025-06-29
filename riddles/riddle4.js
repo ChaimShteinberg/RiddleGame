@@ -5,5 +5,6 @@ export default {
     level: "medium",
     name: "Time Conversion", 
     taskDescription: "How many minutes are there in 2.5 hours?", 
-    correctAnswer: "150"
+    correctAnswer: "150", 
+    hint: "Each hour has 60 minutes."
 };
