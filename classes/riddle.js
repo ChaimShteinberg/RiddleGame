@@ -3,8 +3,9 @@ import readline from 'readline-sync';
 // מבנה חידה
 
 export default class riddle{
-    constructor(id, name, taskDescription, correctAnswer){
+    constructor(id, name, difficulty, taskDescription, correctAnswer){
         this.id = id,
+        this.difficulty = difficulty,
         this.name = name, 
         this.taskDescription = taskDescription, 
         this.correctAnswer = correctAnswer
