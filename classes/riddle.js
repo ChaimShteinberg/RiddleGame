@@ -12,11 +12,13 @@ export default class riddle{
     }
 
     // פעילות החידה
-    ask(){
+    ask(player){
         // מציג את החידה
         console.log(`Riddle number ${this.id}: \n\n` +
-            `The riddle is: ${this.taskDescription}\n`);    
-            
+            `The riddle is: ${this.taskDescription}\n`);
+        // מפעיל טיימר
+        const start = Date.now();
+        
         let test = true;
         while (test){
             // ממתין לקלט מהמשתמש
@@ -29,5 +31,13 @@ export default class riddle{
                 console.log("\nWrong, Try again\n");                
             }
         }
+        // סוגר טיימר
+        let end = Date.now();
+        if (end - start > 5000){
+            console.log("Too slow! 5 seconds penalty applied.");
+            end += 5000;
+        }
+        // שומר את משך זמן החידה
+        player.recordTime(start, end);
     }
 }   
