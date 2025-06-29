@@ -13,10 +13,15 @@ function main(){
 
     const myPlayer = new player(name)
 
+    // בחירת קושי
+    const level = readline.question('Choose difficulty: easy / medium / hard: ');
+
+    const riddleList = riddlesList.filter(Vriddle => Vriddle.level === level)
+
     // רץ על החידות
-    for (const myRiddle of riddlesList){
+    for (const myRiddle of riddleList){
         // יוצר אוביקט של חידה
-        const newriddle = new riddle(myRiddle.id, myRiddle.name, myRiddle.taskDescription, myRiddle.correctAnswer);
+        const newriddle = new riddle(myRiddle.id, myRiddle.level, myRiddle.name, myRiddle.taskDescription, myRiddle.correctAnswer);
         // מפעיל טיימר
         const start = Date.now();
         // מפעיל חידה

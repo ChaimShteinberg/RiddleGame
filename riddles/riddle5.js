@@ -2,7 +2,7 @@
 
 export default {
     id: 5, 
-    difficulty: "hard",
+    level: "hard",
     name: "Prime Riddle", 
     taskDescription: "What is the next prime number after 23?", 
     correctAnswer: "29"

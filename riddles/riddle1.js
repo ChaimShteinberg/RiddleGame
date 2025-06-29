@@ -2,7 +2,7 @@
 
 export default {
     id: 1, 
-    difficulty: "easy",
+    level: "easy",
     name: "Addition", 
     taskDescription: "What is 7 + 6.", 
     correctAnswer: "13"
