@@ -1,14 +1,12 @@
-import { log } from "console";
 import read from "./read.js";
+import {writeFile} from "fs/promises";
 
 function create(newRiddle) {
     read().then(result => {
-        result.push(newRiddle);
-        console.log(result);
-        
+        result.push(newRiddle); 
+        writeFile("C:/Users/Chaim0533197133/OneDrive/Documents/programming/projects/RiddleGame/db/riddlesDB.txt", JSON.stringify(result, null, 2))    
+        .catch(console.log) 
     })
 }
 
-create({
-    id: 7
-})
+export default create
