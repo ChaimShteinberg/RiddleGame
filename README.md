@@ -16,7 +16,8 @@
 # מבנה תיקיות
 ```
 riddle-game/
-├── app.js              הקובץ שמריץ את המשחק 
+├── app.js              
+├── gameManager.js      הקובץ שמריץ את המשחק 
 ├── riddles/            תקיית החידות
 │   ├── riddle1.js
 │   ├── riddle2.js
