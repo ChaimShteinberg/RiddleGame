@@ -18,15 +18,15 @@
 riddle-game/
 ├── app.js              
 ├── gameManager.js      הקובץ שמריץ את המשחק 
-├── riddles/            תקיית החידות
-│   ├── riddle1.js
-│   ├── riddle2.js
-│   ├── riddle3.js
-│   ├── riddle4.js
-│   ├── riddle5.js
-│   ├── riddle6.js
-│   ├── riddlesList.js
+├── db/                 database
+│   ├── rifflesDB.txt
+├── DAL/                CRUD
+│   ├── create.js
+│   ├── read.js
+│   ├── update.js
+│   ├── delete.js
+│   ├── helper.js
 └── classes/            תקיית המחלקות 
     ├── Riddle.js       מחלקת חידה
-    ├── Player.js       מחלקת שחקן
+    └── Player.js       מחלקת שחקן
 ```
