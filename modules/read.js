@@ -1,10 +1,10 @@
-import {readFile} from "fs/promises"
-import { DBpath } from "./helper"
+import { readFile } from "fs/promises"
+import { DBpath } from "./helper.js"
 
-function read(){
+function read() {
     return readFile(DBpath, "utf-8")
-    .then(data => JSON.parse(data))
-    .catch(err => console.log("err"))
+        .then(data => JSON.parse(data))
+        .catch(err => console.log("err"))
 }
 
 export default read
