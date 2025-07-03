@@ -1,32 +1,39 @@
-import readline from 'readline-sync';
-import Player from './classes/player.js';
-import Riddle from './classes/riddle.js';
-import riddlesList from './riddles/riddlesList.js';
+import readline from "readline/promises";
+import play from './servises/play.js';
 
-// game
-export default function startGame(){
-    // הודעת פתיחה
-    console.log("Welcome to the riddle game\n");
+async function menu() {
 
-    // מבקש את שם המשחק ויוצר שחקן
-    const name = readline.question("Enter your name: ");
+    let test = true
+    while (test) {
+        console.log("What do you want to do?\n" +
+            "1. Play the game\n" +
+            "2. Create a new riddle\n" +
+            "3. Read all riddles\n" +
+            "4. Update an existing riddle\n" +
+            "5. Delete a riddle\n" +
+            "6. View leaderboard\n" +
+            "0. exit");
+        const rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout, 
+            terminal: true
+        })
+        const choose = await rl.question("Choose 0 - 6 ")
+        rl.close();
 
-    const myPlayer = new Player(name)
-
-    // בחירת קושי
-    const level = readline.question('Choose difficulty: easy / medium / hard: ');
-
-    const riddleList = riddlesList.filter(Vriddle => Vriddle.level === level)
-
-    // רץ על החידות
-    for (const myRiddle of riddleList){
-        // יוצר אוביקט של חידה
-        const newriddle = new Riddle(myRiddle.id, myRiddle.level, myRiddle.name, myRiddle.taskDescription, myRiddle.correctAnswer, myRiddle.hint); 
-        // מפעיל חידה
-        newriddle.ask(myPlayer)
+        switch (choose) {
+            case "1":
+                await play()
+                break;
+            case "0":
+                test = false
+                break
+            default:
+                console.log("Wrong, Try again")
+                break;
+        }
     }
-    // סיום המשחק
-    console.log("You have successfully completed the game!\n");
-    // הצגת סיכום
-    myPlayer.showStats()
+
 }
+
+export default menu
