@@ -2,7 +2,7 @@ import readline from 'readline-sync';
 
 // מבנה חידה
 
-export default class riddle{
+export default class Riddle{
     constructor(id, level, name, taskDescription, correctAnswer, hint){
         this.id = id,
         this.level = level,
