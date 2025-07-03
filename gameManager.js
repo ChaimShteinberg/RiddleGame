@@ -1,5 +1,6 @@
 import readline from "readline/promises";
 import play from './servises/play.js';
+import createRiddle from "./servises/createRiddle.js"
 
 async function menu() {
 
@@ -24,6 +25,9 @@ async function menu() {
         switch (choose) {
             case "1":
                 await play()
+                break;
+            case "2":
+                await createRiddle()
                 break;
             case "0":
                 test = false
