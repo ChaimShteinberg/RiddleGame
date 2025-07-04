@@ -1,6 +1,7 @@
 import readline from "readline/promises";
 import play from './servises/play.js';
 import createRiddle from "./servises/createRiddle.js"
+import read from "./DAL/read.js";
 
 async function menu() {
 
@@ -28,6 +29,9 @@ async function menu() {
                 break;
             case "2":
                 await createRiddle()
+                break;
+            case "3":
+                console.log(await read())
                 break;
             case "0":
                 test = false
