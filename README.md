@@ -26,6 +26,11 @@ riddle-game/
 │   ├── update.js
 │   ├── delete.js
 │   ├── helper.js
+├── servises/                CRUD
+│   ├── play.js
+│   ├── createRiddle.js
+│   ├── updateRiddle.js
+│   ├── deleteRiffle.js
 └── classes/            תקיית המחלקות 
     ├── Riddle.js       מחלקת חידה
     └── Player.js       מחלקת שחקן
