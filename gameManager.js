@@ -1,8 +1,9 @@
 import readline from "readline/promises";
 import play from './servises/play.js';
-import createRiddle from "./servises/createRiddle.js"
+import createRiddle from "./servises/createRiddle.js";
 import read from "./DAL/read.js";
 import updateRiddle from "./servises/updateRiddle.js";
+import deleteRiddle from "./servises/deleteRiddle.js";
 
 async function menu() {
 
@@ -38,6 +39,7 @@ async function menu() {
                 await updateRiddle();
                 break;
             case "5":
+                await deleteRiddle();
                 break;
             case "6":
                 console.log("Not yet defined")
