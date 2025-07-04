@@ -1,3 +1,3 @@
-import startGame from "./gameManager.js";
+import menu from "./gameManager.js";
 
-startGame()
+menu()
