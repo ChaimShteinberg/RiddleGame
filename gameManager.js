@@ -2,6 +2,7 @@ import readline from "readline/promises";
 import play from './servises/play.js';
 import createRiddle from "./servises/createRiddle.js"
 import read from "./DAL/read.js";
+import updateRiddle from "./servises/updateRiddle.js";
 
 async function menu() {
 
@@ -25,13 +26,21 @@ async function menu() {
 
         switch (choose) {
             case "1":
-                await play()
+                await play();
                 break;
             case "2":
-                await createRiddle()
+                await createRiddle();
                 break;
             case "3":
-                console.log(await read())
+                console.log(await read());
+                break;
+            case "4":
+                await updateRiddle();
+                break;
+            case "5":
+                break;
+            case "6":
+                console.log("Not yet defined")
                 break;
             case "0":
                 test = false
